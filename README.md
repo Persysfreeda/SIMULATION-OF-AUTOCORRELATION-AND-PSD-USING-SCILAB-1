@@ -46,7 +46,49 @@ If any Error, correct it in code and execute again
 Verify the generated waveform using Tabulation and Model Waveform 
 
 __PROGRAM:__
+```
+clc;
+clear all;
+close;
+
+t = 0:0.01:%pi*2;
+x = sin(2*t);
+
+
+subplot(3,2,1);
+plot(t, x);
+title('Original Signal');
+
+au = xcorr(x, x);
+subplot(3,2,2);
+plot(au);
+title('Autocorrelation');
+
+
+v = fft(au);
+subplot(3,2,3);
+plot(abs(v));
+title('FFT of Autocorrelation');
+
+
+fw = fft(x);
+subplot(3,2,4);
+plot(abs(fw));
+title('FFT of Original Signal');
+
+
+fw2 = (abs(fw)).^2;
+subplot(3,2,5);
+plot(fw2);
+title('Power Spectrum');
+
+```
 
 __OUTPUT:__
 
+![WhatsApp Image 2025-11-13 at 15 25 40_3fb20ad9](https://github.com/user-attachments/assets/536ecd58-a694-45be-aade-884c545b48fb)
+
+
 __RESULT:__
+
+Thus, the Wiener–Khinchin theorem is verified — the Power Spectral Density of a signal equals the Fourier transform of its autocorrelation function.
