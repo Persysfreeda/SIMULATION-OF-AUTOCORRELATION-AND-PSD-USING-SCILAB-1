@@ -91,4 +91,4 @@ __OUTPUT:__
 
 __RESULT:__
 
-Thus, the Wiener–Khinchin theorem is verified — the Power Spectral Density of a signal equals the Fourier transform of its autocorrelation function.
+<img width="1705" height="747" alt="image" src="https://github.com/user-attachments/assets/d9bbfd51-50a7-434e-9fa1-dd547d6078f2" />
